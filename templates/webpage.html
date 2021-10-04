@@ -1,0 +1,25 @@
+<!--Standard doctype metadata for html file-->
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Core body of the web page-->
+<body>
+  <form action="/add_click/" method="post">
+  Name:<input name="name" type="text">
+  Address:<input name="address" type="text">
+  ID:<input name="id" type="text">
+  <button type="submit">Add Data</button>
+  <br>
+  <br>
+  <br>
+    [DB_Names:] [DB_Address:] [DB_IDs:]
+  </form>
+  {% for student_element in names %}
+    <form action="/remove_click/" method="post">
+      <p>{{ student_element }}, {{ addresses[loop.index-1] }}, {{ ids[loop.index-1] }} <input type="hidden" name="id" value="{{loop.index}}"/> <button >Remove</button></p>
+    </form>
+    {% endfor %}
+<!--  test_data: <input type="text">{{db_var}}-->
+
+</body>
+</html>
